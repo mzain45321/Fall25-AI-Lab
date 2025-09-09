@@ -1,3 +1,4 @@
+import csv
 class ModelBasedReflexAgent:
     def __init__(self, temp):
         self.fixed_temp = temp
@@ -26,8 +27,12 @@ rooms = {
 
 }
 agent = ModelBasedReflexAgent(16)
-for room , temp in rooms.items():
-    print(room, end=" :\t")
-    agent.sensor(temp)
-    agent.actuator()
-    
+
+with open("model_base_agent_log.csv", mode= "w", newline= "") as file:
+    csv_writer = csv.writer(file)
+    csv_writer.writerow(["Room", "Current Temperature", "Action", "Previous Action"])
+    for room , temp in rooms.items():
+       agent.sensor(temp)
+       action=agent.actuator()
+       print(f" {room}: {temp} => {action}")
+       csv_writer.writerow([room, temp, action, agent.previous_action])
