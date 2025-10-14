@@ -1,20 +1,4 @@
-# def fibon(n=10):
-#    fib = []
-#    num1 = 0
-#    num2 = 1
-#    if n == 0:
-#       return fib
-#    elif n == 1:
-#       return num1
-#    elif n == 1:
-#       return num2
-#    else:
-#       fibs = fibon(n-1)
-#       fibs.append
-
-
-  
-tree = {
+  tree = {
     "A" : ["B", "C"],
     "B" : ["D", "E"],
     "C" : ["F"],
@@ -35,3 +19,4 @@ def dfs(start, goal):
        print("exist")
 dfs(start, goal)
 print(Visited)
+
