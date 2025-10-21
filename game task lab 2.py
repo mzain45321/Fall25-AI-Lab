@@ -1,23 +1,24 @@
-class FizzBuzz:
-    def __init__(self, start, end):
-    
-        self.start = start
-        self.end = end
-    def play(self):
-    
-        n = self.start
-        while n <= self.end:
-            if n % 3 == 0:
-                print("Fizz")
-                if n % 5 == 0:
-                    print("Buzz")
-            elif n % 5 == 0:
-                print("Buzz")
-            else:
-                print(n)
+print("Welcome to Fizz Buzz Game ")
 
-            print() 
-            n += 1
+for number in range(1, 21): 
+    if number % 3 == 0 and number % 5 == 0:
+        correct_answer = "Fizz Buzz"
+    elif number % 3 == 0:
+        correct_answer = "Fizz"
+    elif number % 5 == 0:
+        correct_answer = "Buzz"
+    else:
+        correct_answer = str(number)
 
-game = FizzBuzz(1, 15)
-game.play()
+
+    user_answer = input(f"Your turn for {number}: ")
+
+
+    if user_answer.strip().lower() == correct_answer.lower():
+        print(" Correct!")
+    else:
+        print(f" Wrong! The correct answer was: {correct_answer}")
+        break
+else:
+    print(" You completed the Fizz Buzz game ")
+
